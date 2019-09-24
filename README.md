@@ -2,8 +2,12 @@
 Sistema login em PHP e JavaScript
 
 # aula02 - 24/09/2019
-
-# aula01 - 23/09/2019 
+Layout Bootstrap para os formulários
+- Formulário de login
+- Formulário de recuperação de Senha
+- ~Formulário de Cadastro de novos usuários~
+ 
+# aula01 - 23/09/2019 :godmode:
 🌺🍀 Começou a Primavera 🌻🌷
  Aula inicial, configuração do projeto no Github.
 E criação do passo a passo.
@@ -21,7 +25,7 @@ E criação do passo a passo.
    - Cole no Prompt de Comando e
   -Pressione Enter
   
-##Clonar o repositório **Login** na pasta **c:\xampp\htdocs**
+## Clonar o repositório **Login** na pasta **c:\xampp\htdocs**
   - Tecla Windows - abrir o Github Desktop
   - Clique em *Sign in to Github.com*
   -Digite seu login e senha do Github
