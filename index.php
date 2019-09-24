@@ -62,7 +62,20 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <input type="submit" value="::Entrar::"
+                        name="btnEntrar" id="btnEntrar"
+                        class="btn btn-primary btn-block">
+                    </div>
 
+                    <div class="form-group">
+                        
+                        <p class="text-center">Novo usuário? <a href="#" id="btnRegistrar">
+                            Registre-se aqui!
+                        </a> 
+                    </p>
+                        
+                    </div>
 
                 </form>
 
