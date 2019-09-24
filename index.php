@@ -36,10 +36,33 @@
                 </h2>
                 <form action="#" method="post" class="p-2" id="formLogin">
 
-                <div class="form-group">
-                    <input type="text" name="" id="">
+                    <div class="form-group">
+                        <input type="text" name="nomeUsuario" id="nomeUsuario"
+                        placeholder="Nome do Usuário" class="form-control">
+                    </div>
 
-                </div>
+                    <div class="form-group">
+                        <input type="password" name="senhaUsuario" id="senhaUsuario"
+                        placeholder="senha"
+                        class="form-control">
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="lembrar"
+                            id="lembrar" class="custom-control-input">
+                            <label for="lembrar" class="custom-control-label">
+                                lembrar de mim.
+                            </label>
+
+                        <a href="#" class="float-right" id="btnEsqueci">
+                            Esqueci a senha!
+                        </a>
+                        </div>
+                    </div>
+
+
 
                 </form>
 
