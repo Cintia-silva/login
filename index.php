@@ -35,7 +35,6 @@
                     Entrar no Sistema
                 </h2>
                 <form action="#" method="post" class="p-2" id="formLogin">
-
                     <div class="form-group">
                         <input type="text" name="nomeUsuario" id="nomeUsuario"
                         placeholder="Nome do Usuário" class="form-control">
