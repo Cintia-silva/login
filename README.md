@@ -2,6 +2,11 @@
 Sistema login em PHP e JavaScript
 
 # aula03 - 30/09/2019
+ - formulário de Cadastro de novos usuários
+ - Validação dos campos com jQuery validate
+ - ~ocultar e mostrar os formulários com jQuery~
+ 
+  jQuery é uma biblioteca de funções javascript
 
 # aula02 - 24/09/2019
 Layout Bootstrap para os formulários
