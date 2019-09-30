@@ -120,6 +120,40 @@
             </div>
         </section>
         <!-- Fim da seção de Recuperação de senha -->
+
+        <!-- Início do formulário de cadastro de novos usuários -->
+            <section class="row mt-5">
+                <div class="col-lg-4 offset-lg-4 bg-light rounded"id="caixaRegistro">
+            <h2 class="text-center mt-2">Registra-se aqui</h2>
+                <form action="#" method="post" class="p-2"
+                id="formregistro">
+
+                <div class="form-group">
+                <input type="text" name="nomeCompleto"
+                id="nomeCompleto" class="form-control"
+                placeholder="Nome completo">
+        </div>
+        <div class="form-group">
+        <input type="text" name="nomeusuário"
+        id="nomeUsuario" class="form-control" placeholder="Nome de usuário">
+        </div>
+
+        <div class="form-group">
+        <input type="email" name="emailUsuario"
+        id="emailUsuario" class="form-control"
+        placeholder="E-mail">
+        </div>
+
+        <div class="form-group">
+            <input type="password" name="senhaUsuario"
+            id="senhaUsuario" class="form-control"
+        placeholder="senha">
+        </div>
+
+        
+        </section>
+        <!-- Final do formulário de cadstro de novos usuários -->
+        
     </main>
 
     <!-- Optional JavaScript -->
