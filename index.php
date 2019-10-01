@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Sistema de Login</title>
+    <style>
+    #alerta, #caixaSenha, #caixaRegistro{
+        display:none;
+    }
+    </style>
 </head>
 
 <body class="bg-dark">
@@ -36,44 +41,38 @@
                 </h2>
                 <form action="#" method="post" class="p-2" id="formLogin">
                     <div class="form-group">
-                        <input type="text" name="nomeUsuario" id="nomeUsuario"
-                        placeholder="Nome do Usuário" class="form-control">
+                        <input type="text" name="nomeUsuario" id="nomeUsuario" placeholder="Nome do Usuário" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <input type="password" name="senhaUsuario" id="senhaUsuario"
-                        placeholder="senha"
-                        class="form-control">
+                        <input type="password" name="senhaUsuario" id="senhaUsuario" placeholder="senha" class="form-control">
 
                     </div>
 
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" name="lembrar"
-                            id="lembrar" class="custom-control-input">
+                            <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input">
                             <label for="lembrar" class="custom-control-label">
                                 lembrar de mim.
                             </label>
 
-                        <a href="#" class="float-right" id="btnEsqueci">
-                            Esqueci a senha!
-                        </a>
+                            <a href="#" class="float-right" id="btnEsqueci">
+                                Esqueci a senha!
+                            </a>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" value="::Entrar::"
-                        name="btnEntrar" id="btnEntrar"
-                        class="btn btn-primary btn-block">
+                        <input type="submit" value="::Entrar::" name="btnEntrar" id="btnEntrar" class="btn btn-primary btn-block">
                     </div>
 
                     <div class="form-group">
-                        
-                        <p class="text-center">Novo usuário? <a href="#" id="btnRegistrar">
-                            Registre-se aqui!
-                        </a> 
-                    </p>
-                        
+
+                        <p class="text-center">Novo usuário? <a href="#" id="btnRegistrarNovo">
+                                Registre-se aqui!
+                            </a>
+                        </p>
+
                     </div>
 
                 </form>
@@ -83,11 +82,11 @@
 
         </section>
         <!-- Final da seção  -->
-        
+
 
         <!-- Formulário de Recuperação de Senha -->
         <section class="row mt-5">
-            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaLogin">
+            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaSenha">
                 <h2 class="text-center mt-2">
                     Gerar Nova Senha
                 </h2>
@@ -99,14 +98,11 @@
 
                     </div>
                     <div class="form-group">
-                        <input type="email" name="emailGerarSenha" id="emailGerarSenha" class="form-control"
-                        placeholder="E-mail de recuperação de senha">
+                        <input type="email" name="emailGerarSenha" id="emailGerarSenha" class="form-control" placeholder="E-mail de recuperação de senha">
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" value="::Gerar::"
-                        name="btnGerar" id="btnGerar"
-                        class="btn btn-primary btn-block">                       
+                        <input type="submit" value="::Gerar::" name="btnGerar" id="btnGerar" class="btn btn-primary btn-block">
                     </div>
 
                     <div class="form-group">
@@ -122,38 +118,56 @@
         <!-- Fim da seção de Recuperação de senha -->
 
         <!-- Início do formulário de cadastro de novos usuários -->
-            <section class="row mt-5">
-                <div class="col-lg-4 offset-lg-4 bg-light rounded"id="caixaRegistro">
-            <h2 class="text-center mt-2">Registra-se aqui</h2>
-                <form action="#" method="post" class="p-2"
-                id="formregistro">
+        <section class="row mt-5">
+            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaRegistro">
+                <h2 class="text-center mt-2">Registra-se aqui</h2>
+                <form action="#" method="post" class="p-2" id="formregistro">
 
-                <div class="form-group">
-                <input type="text" name="nomeCompleto"
-                id="nomeCompleto" class="form-control"
-                placeholder="Nome completo">
-        </div>
-        <div class="form-group">
-        <input type="text" name="nomeusuário"
-        id="nomeUsuario" class="form-control" placeholder="Nome de usuário">
-        </div>
+                    <div class="form-group">
+                        <input type="text" name="nomeCompleto" id="nomeCompleto" class="form-control" placeholder="Nome completo">
+                    </div>
 
-        <div class="form-group">
-        <input type="email" name="emailUsuario"
-        id="emailUsuario" class="form-control"
-        placeholder="E-mail">
-        </div>
+                    <div class="form-group">
+                        <input type="text" name="nomeusuário" id="nomeUsuario" class="form-control" placeholder="Nome de usuário">
+                    </div>
 
-        <div class="form-group">
-            <input type="password" name="senhaUsuario"
-            id="senhaUsuario" class="form-control"
-        placeholder="senha">
-        </div>
+                    <div class="form-group">
+                        <input type="email" name="emailUsuario" id="emailUsuario" class="form-control" placeholder="E-mail">
+                    </div>
 
-        
+                    <div class="form-group">
+                        <input type="password" name="senhaUsuario" id="senhaUsuario" class="form-control" placeholder="senha">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" name="senhaUsuarioConfirmar" id="senhaUsuarioConfirmar" class="form-control" placeholder="Confirmar senha">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="concordar" id="concordar" class="custom-control-input">
+                            <label for="concordar" class="custom-control-label">
+                                Eu concordo com <a href="#"> os termos e condições
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="::Registrar::" name="btnRegistrar" class="btn btn-primary btn-block">
+
+                    </div>
+
+            <div class="form-group">
+                <p class="text-center">
+                    Já Registrado?
+                    <a href="#" id="btnRegistrado2">
+                    Entrar por aqui 
+                </p>
+            </div>
+
+                </form>
         </section>
         <!-- Final do formulário de cadstro de novos usuários -->
-        
+
     </main>
 
     <!-- Optional JavaScript -->
@@ -161,6 +175,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        //Código jQuerry para mostrar e ocultar os formulários
+    </script>
 </body>
 
 </html>
