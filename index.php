@@ -15,9 +15,11 @@
 
     <title>Sistema de Login</title>
     <style>
-    #alerta, #caixaSenha, #caixaRegistro{
-        display:none;
-    }
+        #alerta,
+        #caixaSenha,
+        #caixaRegistro {
+            display: none;
+        }
     </style>
 </head>
 
@@ -156,13 +158,13 @@
 
                     </div>
 
-            <div class="form-group">
-                <p class="text-center">
-                    Já Registrado?
-                    <a href="#" id="btnRegistrado2">
-                    Entrar por aqui 
-                </p>
-            </div>
+                    <div class="form-group">
+                        <p class="text-center">
+                            Já Registrado?
+                            <a href="#" id="btnRegistrado2">
+                                Entrar por aqui
+                        </p>
+                    </div>
 
                 </form>
         </section>
@@ -177,6 +179,28 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
         //Código jQuerry para mostrar e ocultar os formulários
+        $(function() {
+
+            $("#btnEsqueci").click(function() {
+                $("#caixaLogin").hide(); //ocultar
+                $("#caixaSenha").Show(); //Mostrar
+            });
+
+            $("#btnJaRegistrado").click(function() {
+                $("#caixaSenha").hide(); //ocultar
+                $("#caixaLogin").Show(); //Mostrar
+            })
+            $("#btnRegistrarNovo").click(function() {
+                $("#caixaLogin").hide(); //ocultar
+                $("#caixaRegistro").Show(); //Mostrar
+            })
+
+            $("#btnJaRegistrado2").click(function() {
+                $("#caixaLogin").Show();
+                $("#caixaRegistro").hide();
+
+            })
+        });
     </script>
 </body>
 
