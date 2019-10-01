@@ -37,7 +37,7 @@
         </section>
         <!-- Formulário de login -->
         <section class="row">
-            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixalogin">
+            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaLogin">
                 <h2 class="text-center mt-2">
                     Entrar no Sistema
                 </h2>
@@ -183,20 +183,20 @@
 
             $("#btnEsqueci").click(function() {
                 $("#caixaLogin").hide(); //ocultar
-                $("#caixaSenha").Show(); //Mostrar
+                $("#caixaSenha").show(); //Mostrar
             });
 
             $("#btnJaRegistrado").click(function() {
                 $("#caixaSenha").hide(); //ocultar
-                $("#caixaLogin").Show(); //Mostrar
+                $("#caixaLogin").show(); //Mostrar
             })
             $("#btnRegistrarNovo").click(function() {
                 $("#caixaLogin").hide(); //ocultar
-                $("#caixaRegistro").Show(); //Mostrar
+                $("#caixaRegistro").show(); //Mostrar
             })
 
-            $("#btnJaRegistrado2").click(function() {
-                $("#caixaLogin").Show();
+            $("#btnRegistrado2").click(function() {
+                $("#caixaLogin").show();
                 $("#caixaRegistro").hide();
 
             })
