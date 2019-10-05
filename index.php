@@ -24,12 +24,12 @@
     </style>
 </head>
 
-<body class="bg-dark">
+ class="bg-dark">
     <!-- Fundo Escuro -->
     <main class="container mt-4">
         <section class="row">
             <div class="col-lg-4 offset-lg-4" id="alerta">
-                <div class="alert alert-success text center">
+                <div class="alert alert-success <bodytext center">
                     <strong class="resultado">
                         Alo Ha Tchurmaáaaaaaaaaaaaaaaaaa!
                     </strong>
