@@ -24,7 +24,7 @@
     </style>
 </head>
 
- class="bg-dark">
+<body class="bg-dark">
     <!-- Fundo Escuro -->
     <main class="container mt-4">
         <section class="row">
@@ -214,17 +214,52 @@
             $("#btnJaRegistrado").click(function() {
                 $("#caixaSenha").hide(); //ocultar
                 $("#caixaLogin").show(); //Mostrar
-            })
+            });
             $("#btnRegistrarNovo").click(function() {
                 $("#caixaLogin").hide(); //ocultar
                 $("#caixaRegistro").show(); //Mostrar
-            })
+            });
 
             $("#btnRegistrado2").click(function() {
-                $("#caixaLogin").show();
-                $("#caixaRegistro").hide();
+                $("#caixaLogin").show(); //Mostrar
+                $("#caixaRegistro").hide(); //Ocultar
+                
+            });
 
-            })
+            //Cadastro de novo usuário
+            $("#btnRegistrar").click(function(e) {
+                if(document
+                .querySelector("#formRegistro")
+                .checkValidity()){
+                    e.preventDefault(); //Não abrir outra página
+                    //Envio dos dados via Ajax
+                    $.ajax({
+                        url:'recebe_dados.php',
+                        method: 'post', 
+                        data:$("#formRegistro").serialize()+'&action=cadastro',
+                        success:function(resposta){
+                            $("#alerta").show();
+                            $(".resultado").html(resposta);
+                        }
+                    
+                
+                    });
+                }
+            
+            
+                return true;
+            });
+
+            //login
+            $("#btnEntrar").click(function(e) {
+
+            });
+
+            //Recuperação de senha
+            $("#btnGerar").click(function(e) {
+
+            });
+
         });
 
         /*
@@ -251,6 +286,6 @@
             min: jQuery.validator.format("Por favor, forne&ccedil;a um valor maior ou igual a {0}.")
         });
     </script>
-</body>
+    </body>
 
 </html>
