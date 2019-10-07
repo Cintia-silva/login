@@ -1,34 +1,30 @@
 <?php
 //Teste se existe a ação
-
-    //Teste se ação é igual a cadastro
-if( $_POST['action'] =='cadastro'){
-        echo"<p>cadastro</p>";
-        echo"\n<pre>"; //Pre-formatar
+if (isset($_POST['action'])) {
+    if ($_POST['action'] == 'cadastro') {
+        //Teste se ação é igual a cadastro
+        echo "\n<p>cadastro</p>";
+        echo "\n<pre>"; //Pre-formatar
         print_r($_POST);
-        ECHO"\n<\pre>";
-
-}else if($_POST['action'] =='login'){
+        echo "\n<\pre>";
+    } else if ($_POST['action'] == 'login') {
         //Senão, teste se ação é login
-        echo "<p>login</p>";
+        echo "\n<p>login</p>";
         echo "\n<pre>"; //Pre-formatar
         print_r($_POST);
         echo "\n<\pre>";
-
-}else if($_POST['action'] =='senha'){
+    } else if ($_POST['action'] == 'senha') {
         //Senão, teste se ação é recuperar senha
-        echo "<p>senha</p>";
+        echo "\n<p>senha</p>";
         echo "\n<pre>"; //Pre-formatar
         print_r($_POST);
         echo "\n<\pre>";
-}
-else{
+    } else {
         header("location:index.php");
-}
-
-}else{
+    }
+} else {
     //Redirecionando para index.php, negando o acesso
-    //a esse arquivo diretemente.
+    //a esse arquivo diretamente.
     header("location:index.php");
 }
 
