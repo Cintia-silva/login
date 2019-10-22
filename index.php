@@ -159,96 +159,101 @@
     <script>
         //Código jQuery para mostrar e ocultar os formulários
         $(function() {
-        //Validação de Formulários
-        jQuery.validator.setDefaults({
-            success: "valid"
-        });
-        $("#formRegistro").validate({
-            rules: {
-                senhaDoUsuario: "required",
-                senhaUsuarioConfirmar: {
-                    equalTo: "#senhaDoUsuario"
+            //Validação de Formulários
+            jQuery.validator.setDefaults({
+                success: "valid"
+            });
+            $("#formRegistro").validate({
+                rules: {
+                    senhaDoUsuario: "required",
+                    senhaUsuarioConfirmar: {
+                        equalTo: "#senhaDoUsuario"
+                    }
                 }
-            }
-        });
-        $("#formLogin").validate();
-        $("#formSenha").validate();
-        //Mostrar e Ocultar Formulários
-        $("#btnEsqueci").click(function() {
-            $("#caixaLogin").hide(); //Ocultar Login
-            $("#caixaSenha").show(); //Mostrar Nova Senha
-        });
-        $("#btnJaRegistrado").click(function() {
-            $("#caixaSenha").hide(); //Ocultar Gerar NovaSenha
-            $("#caixaLogin").show(); //Mostrar caixa Login
-        });
-        $("#btnRegistrarNovo").click(function() {
-            $("#caixaLogin").hide(); //Ocultar
-            $("#caixaRegistro").show(); //Mostrar
-        });
-        $("#btnJaRegistrado2").click(function() {
-            $("#caixaLogin").show(); //Mostrar
-            $("#caixaRegistro").hide(); //Ocultar
-        });
-        //Cadastro de novo usuário
-        $("#btnRegistrar").click(function(e) {
-            if (document
-                .querySelector("#formRegistro")
-                .checkValidity()) {
-                e.preventDefault(); //Não abrir outra págin
-                //Envio dos dados via Ajax
-                $.ajax({
-                    url: 'recebe_dados.php',
-                    method: 'post',
-                    data: $("#formRegistro").serialize() + '&action=cadastro',
-                    success: function(resposta) {
-                        $("#alerta").show();
-                        $(".resultado").html(resposta);
-                    }
-                });
-            }
-            return true;
-        });
-        //Login
-        $("#btnEntrar").click(function(e) {
-            if (document
-                .querySelector("#formLogin")
-                .checkValidity()) {
-                e.preventDefault(); //Não abrir outra págin
-                //Envio dos dados via Ajax
-                $.ajax({
-                    url: 'recebe_dados.php',
-                    method: 'post',
-                    data: $("#formLogin").serialize() + '&action=login',
-                    success: function(resposta) {
-                        $("#alerta").show();
-                        $(".resultado").html(resposta);
-                    }
-                });
-            }
-            return true;
-        });
+            });
+            $("#formLogin").validate();
+            $("#formSenha").validate();
+            //Mostrar e Ocultar Formulários
+            $("#btnEsqueci").click(function() {
+                $("#caixaLogin").hide(); //Ocultar Login
+                $("#caixaSenha").show(); //Mostrar Nova Senha
+            });
+            $("#btnJaRegistrado").click(function() {
+                $("#caixaSenha").hide(); //Ocultar Gerar NovaSenha
+                $("#caixaLogin").show(); //Mostrar caixa Login
+            });
+            $("#btnRegistrarNovo").click(function() {
+                $("#caixaLogin").hide(); //Ocultar
+                $("#caixaRegistro").show(); //Mostrar
+            });
+            $("#btnJaRegistrado2").click(function() {
+                $("#caixaLogin").show(); //Mostrar
+                $("#caixaRegistro").hide(); //Ocultar
+            });
+            //Cadastro de novo usuário
+            $("#btnRegistrar").click(function(e) {
+                if (document
+                    .querySelector("#formRegistro")
+                    .checkValidity()) {
+                    e.preventDefault(); //Não abrir outra págin
+                    //Envio dos dados via Ajax
+                    $.ajax({
+                        url: 'recebe_dados.php',
+                        method: 'post',
+                        data: $("#formRegistro").serialize() + '&action=cadastro',
+                        success: function(resposta) {
+                            $("#alerta").show();
+                            $(".resultado").html(resposta);
+                        }
+                    });
+                }
+                return true;
+            });
+            //Login
+            $("#btnEntrar").click(function(e) {
+                if (document
+                    .querySelector("#formLogin")
+                    .checkValidity()) {
+                    e.preventDefault(); //Não abrir outra págin
+                    //Envio dos dados via Ajax
+                    $.ajax({
+                        url: 'recebe_dados.php',
+                        method: 'post',
+                        data: $("#formLogin").serialize() + '&action=login',
+                        success: function(resposta) {
+                            $("#alerta").show();
+                            //$(".resultado").html(resposta);
+                            if (resposta === "ok") {
+                                window.location = "perfil.php";
+                            } else {
+                                $(".resultado").html(resposta);
+                            }
+                        }
+                    });
+                }
+                return true;
+            });
 
 
-        //Recuperação de senha
-        $("#btnGerar").click(function(e) {
-            if (document
-                .querySelector("#formSenha")
-                .checkValidity()) {
-                e.preventDefault(); //Não abrir outra págin
-                //Envio dos dados via Ajax
-                $.ajax({
-                    url: 'recebe_dados.php',
-                    method: 'post',
-                    data: $("#formSenha").serialize() + '&action=senha',
-                    success: function(resposta) {
-                        $("#alerta").show();
-                        $(".resultado").html(resposta);
-                    }
-                });
-            }
-            return true;
-        });
+            //Recuperação de senha
+            $("#btnGerar").click(function(e) {
+                if (document
+                    .querySelector("#formSenha")
+                    .checkValidity()) {
+                    e.preventDefault(); //Não abrir outra págin
+                    //Envio dos dados via Ajax
+                    $.ajax({
+                        url: 'recebe_dados.php',
+                        method: 'post',
+                        data: $("#formSenha").serialize() + '&action=senha',
+                        success: function(resposta) {
+                            $("#alerta").show();
+                            $(".resultado").html(resposta);
+                        }
+                    });
+                }
+                return true;
+            });
         });
         /*
          * Translated default messages for the jQuery validation plugin.
