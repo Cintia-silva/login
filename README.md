@@ -1,6 +1,11 @@
 # login
 Sistema login em PHP e JavaScript
 
+#aula09 - 22/10/2019
+- Autenticação do usuário completa
+- Permissão de navegação através de SESSÃO
+- Lembrar senha e usuário com COOKIES
+
 # aula08 - 21/10/2019
 - Autenticação do úsuario e permissão de acesso ao perfil.php
 - Conceito de sessão
