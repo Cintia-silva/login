@@ -42,27 +42,20 @@
                 </h2>
                 <form action="#" method="post" class="p-2" id="formLogin">
                     <div class="form-group">
-                        <input type="text" name="nomeUsuario" id="nomeUsuario"
-                        placeholder="Nome de Usuário" class="form-control"
-                        required minlength="5"
-                        value="<?= isset($_COOKIE['nomeDoUsuario'])?$_COOKIE['nomeDoUsuario']:"";
-                        ?>">
-                        
+                        <input type="text" name="nomeUsuario" id="nomeUsuario" placeholder="Nome de Usuário" class="form-control" required minlength="5" value="<?= isset($_COOKIE['nomeDoUsuario']) ? $_COOKIE['nomeDoUsuario'] : "";
+                                                                                                                                                                ?>">
+
                     </div>
+
                     <div class="form-group">
-                        <input type="password" name="senhaUsuario" id="senhaUsuario" 
-                        placeholder="Senha" class="form-control"
-                        required minlength="6"
-                        value="<?= isset($_COOKIE['senhaDoUsuario'])?$_COOKIE['senhaDoUsuario']:"";
-                        ?>">
+                        <input type="password" name="senhaUsuario" id="senhaUsuario" placeholder="Senha" class="form-control" required minlength="6" value="<?= isset($_COOKIE['senhaDoUsuario']) ? $_COOKIE['senhaDoUsuario'] : "";
+                                                                                                                                                            ?>">
 
                     </div>
                     <div class="form-group mt-5">
                         <div class="custom-control custom-checkbox">
-                        
-                            <input type="checkbox" name="lembrar" id="lembrar"
-                            class="custom-control-input"
-                            <?= isset($_COOKIE['senhaDoUsuario']) ?" checked" : ""; ?>>
+
+                            <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input" <?= isset($_COOKIE['senhaDoUsuario']) ? " checked" : ""; ?>>
                             <label for="lembrar" class="custom-control-label">
                                 Lembrar de mim.
                             </label>
@@ -81,10 +74,96 @@
                             </a>
                         </p>
                     </div>
+
+                    <div class="form-group">
+                        <p class="text-center">
+                            Formulário Novo <a href="#" id="btnMostrar">
+                                Mostrar
+                            </a>
+                        </p>
+                    </div>
                 </form>
             </div>
         </section>
         <!-- Final da Seção de Login-->
+
+        <!-- Começo do formulário novo-->
+        <section class="row mt-5">
+
+            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="formularioNovo">
+                <form id="formNovo">
+                    <h2 class="text-center mt-2">
+                        Formulário Novo
+                    </h2>
+                    <h2 class="text-center mt-2">
+                        <div class="form-group">
+                            <label for="nomeCompleto">Nome completo</label>
+                            <input type="text" name="nomeCompleto" id="nomeCompleto" required placeholder="Digite o seu nome Completo" class="form-control">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email" required placeholder="Digite o seu E-mail" class="form-control">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dataNiver">Data de aniversário</label>
+                            <input type="date" name="dataNiver" id="dataNiver" class="form-control">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="urlFace">Perfil do facebook</label>
+                            <input type="url" name="urlFace" id="urlFace" required placeholder="Página do perfil do Face" class="form-control">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="urlImagem">Imagem de Perfil</label>
+                            <input type="url" name="urlImagem" id="urlImagem" required placeholder="Endereço da imagem do seu perfil" class="form-control">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <select class="form-control " name="estado" id="estado">
+                                <option></option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="PR">Paraná</option>
+
+                </form>
+            </div>
+            </select>
+
+            </div>
+
+            <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <select class="form-control " name="cidade" id="cidade">
+                    <option></option>
+                    <option value="Brusque">Brusxxxqui</option>
+                    <option value="Guabiruba">Guabiruba</option>
+                    <option value="Itajaí">Itajaí</option>
+                    <option value="Gaspar">Gaspar</option>
+                    <option value="Boruverá">Botuverá</option>
+                </select>
+
+            </div>
+            <div class="form-group mt-4">
+                <input type="submit" value="::Enviar::" name="btnEnviar" class="btn btn-danger btn-block">
+            </div>
+
+
+            </form>
+
+            </div>
+            <!-- Fim da coluna-->
+        </section>
+
+        <!-- Final do formulário novo-->
+
         <!-- Formulário de Recuperação de Senha -->
         <section class="row mt-5">
             <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaSenha">
@@ -186,8 +265,14 @@
             });
             $("#formLogin").validate();
             $("#formSenha").validate();
+            $("#formNovo").validate();
             //Mostrar e Ocultar Formulários
-            $("#btnEsqueci").click(function() {
+            $("#btnMostrar").click(function() {
+                $("#caixaLogin").hide(); //Ocultar Login
+                $("#formularioNovo").show(); //Mostrar Novo formulário
+            });
+
+            $("#btn").click(function() {
                 $("#caixaLogin").hide(); //Ocultar Login
                 $("#caixaSenha").show(); //Mostrar Nova Senha
             });
