@@ -16,7 +16,8 @@
     <style>
         #alerta,
         #caixaSenha,
-        #caixaRegistro {
+        #caixaRegistro,
+        #formularioNovo {
             display: none;
         }
     </style>
@@ -154,6 +155,13 @@
             <div class="form-group mt-4">
                 <input type="submit" value="::Enviar::" name="btnEnviar" class="btn btn-danger btn-block">
             </div>
+            <div class="form-group">
+                <p class="text-center mt-2">
+                    Voltar ao login ? <a href="#" id="btnVoltar">
+                        Voltar
+                    </a>
+                </p>
+            </div>
 
 
             </form>
@@ -215,6 +223,11 @@
                     </div>
                     <div class="form-group">
                         <input type="password" name="senhaUsuarioConfirmar" id="senhaUsuarioConfirmar" class="form-control" placeholder="Confirmar senha" required minlength="6">
+
+                    </div>
+                    <div class="form-group">
+                        <input type="url" name="urlImagem" id="urlImagem" required placeholder="Endereço da imagem do seu perfil" class="form-control">
+
                     </div>
                     <div class="form-group mt-4">
                         <div class="custom-control custom-checkbox">
@@ -272,7 +285,7 @@
                 $("#formularioNovo").show(); //Mostrar Novo formulário
             });
 
-            $("#btn").click(function() {
+            $("#btnEsqueci").click(function() {
                 $("#caixaLogin").hide(); //Ocultar Login
                 $("#caixaSenha").show(); //Mostrar Nova Senha
             });
@@ -280,13 +293,18 @@
                 $("#caixaSenha").hide(); //Ocultar Gerar NovaSenha
                 $("#caixaLogin").show(); //Mostrar caixa Login
             });
+
             $("#btnRegistrarNovo").click(function() {
                 $("#caixaLogin").hide(); //Ocultar
                 $("#caixaRegistro").show(); //Mostrar
             });
             $("#btnJaRegistrado2").click(function() {
-                $("#caixaLogin").show(); //Mostrar
-                $("#caixaRegistro").hide(); //Ocultar
+                $("#caixaLogin").show(); //Ocultar Gerar NovaSenha
+                $("#caixaRegistro").hide(); //Mostrar caixa Login
+            });
+            $("#btnVoltar").click(function() {
+                $("#caixaLogin").show(); //Mostrar login
+                $("#formularioNovo").hide(); //Ocultar formulário novo
             });
             //Cadastro de novo usuário
             $("#btnRegistrar").click(function(e) {
