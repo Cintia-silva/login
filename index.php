@@ -226,7 +226,7 @@
 
                     </div>
                     <div class="form-group">
-                        <input type="url" name="urlImagem" id="urlImagem" required placeholder="Endereço da imagem do seu perfil" class="form-control">
+                        <input type="url" name="URL" id="URL" required placeholder="Endereço da imagem do seu perfil" class="form-control">
 
                     </div>
                     <div class="form-group mt-4">
