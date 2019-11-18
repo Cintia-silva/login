@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Out-2019 às 21:27
+-- Tempo de geração: 18-Nov-2019 às 20:15
 -- Versão do servidor: 10.3.16-MariaDB
 -- versão do PHP: 7.3.7
 
@@ -39,8 +39,19 @@ CREATE TABLE `usuario` (
   `emailUsuario` varchar(45) NOT NULL,
   `senhaDoUsuario` char(40) NOT NULL,
   `dataCriado` date NOT NULL,
-  `URL` varchar (200) NOT NULL
+  `URL` varchar(200) NOT NULL,
+  `token` char(10) NOT NULL,
+  `tempoDeVida` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`idUsuario`, `nomeCompleto`, `nomeDoUsuario`, `emailUsuario`, `senhaDoUsuario`, `dataCriado`, `URL`, `token`, `tempoDeVida`) VALUES
+(1, 'Cintia suelem', 'cintia', 'cintiasuelemgta@hotmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-11-18', 'https://conteudo.imguol.com.br/fe/2016/11/24/aviao-da-boeing-usado-pela-gol-1479984097247_615x300.jpg', '', '2019-11-18 22:08:10'),
+(3, 'Eduardo', 'eduardimho', 'burg@hamburguer.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-11-18', 'https://portal-amb-imgs.clubedaana.com.br/2017/09/hamburguer-camemburguer-525x400.jpg', '', '2019-11-18 22:08:10'),
+(4, 'coelho e cenoura', 'cenourinha', 'coelho@cenourinha.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-11-18', 'https://www.petz.com.br/blog/wp-content/uploads/2019/03/coelho-roedores.jpg', '', '2019-11-18 22:09:56');
 
 --
 -- Índices para tabelas despejadas
@@ -62,7 +73,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
