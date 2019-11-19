@@ -5,10 +5,37 @@
 
       $email = $_GET['email'];
       $token = $_GET['token'];
-      $msg= "$email: $token";
+      //$msg= "$email: $token";
       // Só teste no método Get
       //gerarSenha.php?token=1234567890&email=cintiasuelemgta@hotmail.com
 
+      $sql = $connect->prepare("SELECT * FROM usuario WHERE
+      emailUsuario=? AND token=? AND tempoDeVida > NOW()");
+      $sql->bind_param("ss", $email, $token);
+      $sql->execute();
+
+      $resultado = $sql->get_result();
+      if($resultado->num_rows > 0){
+
+        if(isset($_POST['gerar'])){
+          $nova_senha = $_POST['senha'];
+          $confirmar_senha = $_POST['csenha'];
+          if($nova_senha == $confirmar_senha){
+              $sql = $connect->prepare("UPDATE usuario SET senhaDoUsuario=?,
+              token='' WHERE emailUsuario=?");
+              $sql->bind_param("ss",$nova_senha,$email);
+              $sql->execute();
+              $msg= "senha alterada com sucesso";
+
+          }else{
+            $msg= "senhas não conferem.";
+          }
+        }
+
+      }else{
+        header("location: index.php");
+        exit();
+      }
   }else{
     //Kicando para o index
     header("location: index.php");

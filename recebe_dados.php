@@ -141,7 +141,11 @@ if (isset($_POST['action'])) {
                 emailUsuario= ?");
                 $sql->bind_param("ss", $token, $email);
                 $sql->execute();
-                echo "token no Banco de Dados!!";
+                //echo "token no Banco de Dados!!";
+                $link= "<a href='gerarSenha.php?email=$email&token=$token'>
+                Clique aqui para gerar Nova Senha</a>";
+                echo $link;
+
                 
             }else{
                 echo "E-mail não foi encontrado";
